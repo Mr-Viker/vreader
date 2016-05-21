@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#485e46">
+
+        <Button
+            android:id="@+id/btn_bookrack_setting"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_margin="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_alignParentLeft="true"
+            android:background="@drawable/bookrack_setting" />
+
+        <TextView
+            android:id="@+id/tv_bookrack_title"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:padding="5dp"
+            android:layout_centerInParent="true"
+            android:text="@string/app_name"
+            android:gravity="center"
+            android:textSize="24sp"
+            android:textColor="#000000" />
+
+        <Button
+            android:id="@+id/btn_bookrack_bookcity"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/bookrack_bookcity" />
+    </RelativeLayout>
+
+    <GridView
+        android:id="@+id/gv_bookrack_bookcase"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:columnWidth="120dp"
+        android:numColumns="auto_fit"
+        android:verticalSpacing="10dp"
+        android:horizontalSpacing="10dp"
+        android:stretchMode="columnWidth"
+        android:gravity="center"/>
+
+</LinearLayout>

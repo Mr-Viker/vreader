@@ -12,7 +12,7 @@ import java.net.URL;
  * Created by Viker on 2016/5/20.
  * 继承AsyncTask，将需要进行的耗时操作如网络请求放在doInBackground()方法中
  */
-public class HttpTask extends AsyncTask<String,void,void>{
+public class HttpTask extends AsyncTask<String,Integer,String>{
 
     @Override
     protected void onPreExecute() {
@@ -20,10 +20,10 @@ public class HttpTask extends AsyncTask<String,void,void>{
     }
 
     //开启新线程，进行网络请求
-    protected Object doInBackground(String address) {
+    protected String doInBackground(String... address) {
         HttpURLConnection connection = null;
         try {
-            URL url = new URL(address);
+            URL url = new URL(address.toString());
             connection = (HttpURLConnection) url.openConnection();
             connection.setRequestMethod("GET");
             connection.setConnectTimeout(10000);
