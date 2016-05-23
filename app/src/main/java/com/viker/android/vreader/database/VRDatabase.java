@@ -6,7 +6,6 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.viker.android.vreader.modle.Book;
-import com.viker.android.vreader.modle.BookType;
 import com.viker.android.vreader.modle.Chapter;
 import com.viker.android.vreader.modle.ChapterContent;
 
@@ -19,6 +18,8 @@ import java.util.List;
  * 注意：VRDatabase不是数据库！只是数据库的操作的集合类。
  */
 public class VRDatabase {
+
+    private static final String TAG = "VRDatabase";
 
     private static final String DB_NAME = "v_reader"; //数据库名
     private static final int VERSION = 1; //数据库版本号
@@ -39,19 +40,20 @@ public class VRDatabase {
         return vrDatabase;
     }
 
-    //将BookType实例存储到数据库
+/*    //将BookType实例存储到数据库
     public void saveBookType(BookType bookType) {
         if (bookType != null) {
             ContentValues values = new ContentValues();
             values.put("type_id", bookType.getTypeId());
             values.put("type_name", bookType.getTypeName());
             db.insert("BookType", null, values);
+            Log.d(TAG + " saveBookType", values.toString());
         }
     }
 
     //从数据库读取所有的BookType
     public List<BookType> loadBookTypes() {
-        List<BookType> bookTypeList = new ArrayList<>();
+        List<BookType> bookTypes = new ArrayList<>();
         Cursor cursor = db.query("BookType", null, null, null, null, null, null);
         if (cursor.moveToFirst()) {
             do {
@@ -59,11 +61,13 @@ public class VRDatabase {
                 bookType.setId(cursor.getInt(cursor.getColumnIndex("id")));
                 bookType.setTypeId(cursor.getString(cursor.getColumnIndex("type_id")));
                 bookType.setTypeName(cursor.getString(cursor.getColumnIndex("type_name")));
-                bookTypeList.add(bookType);
+                Log.d(TAG + " loadBookType", bookType.getId() + bookType.getTypeId() +
+                        bookType.getTypeName());
+                bookTypes.add(bookType);
             } while (cursor.moveToNext());
         }
-        return bookTypeList;
-    }
+        return bookTypes;
+    }*/
 
     //将Book实例存储到数据库
     public void saveBook(Book book) {
@@ -83,7 +87,7 @@ public class VRDatabase {
 
     //从数据库中读取某分类下所有的Book
     public List<Book> loadBooks() {
-        List<Book> bookList = new ArrayList<>();
+        List<Book> books = new ArrayList<>();
         Cursor cursor = db.query("Book", null, null, null, null, null, null);
         if (cursor.moveToFirst()) {
             do {
@@ -97,10 +101,11 @@ public class VRDatabase {
                 book.setTypeId(cursor.getString(cursor.getColumnIndex("type_id")));
                 book.setTypeName(cursor.getString(cursor.getColumnIndex("type_name")));
                 book.setUpdateTime(cursor.getString(cursor.getColumnIndex("update_time")));
-                bookList.add(book);
+                books.add(book);
             } while (cursor.moveToNext());
         }
-        return bookList;
+        cursor.close();
+        return books;
     }
 
     //将Chapter实例存储到数据库中

@@ -18,7 +18,7 @@ public class VRSQLiteOpenHelper extends SQLiteOpenHelper {
 
     //Book表建表语句
     private static final String CREATE_BOOK = "create table Book (" +
-            "id integer primary autoincrement," +
+            "id integer primary key autoincrement," +
             "book_id text," +
             "author text," +
             "book_name text," +
@@ -30,7 +30,7 @@ public class VRSQLiteOpenHelper extends SQLiteOpenHelper {
 
     //Chapter表建表语句
     private static final String CREATE_CHAPTER = "create table Chapter (" +
-            "id integer primary autoincrement," +
+            "id integer primary key autoincrement," +
             "chapter_id text," +
             "chapter_name text," +
             "book_id text," +
@@ -38,7 +38,7 @@ public class VRSQLiteOpenHelper extends SQLiteOpenHelper {
 
     //ChapterContent表建表语句
     private static final String CREATE_CHAPTER_CONTENT = "create table ChapterContent (" +
-            "id integer primary autoincrement," +
+            "id integer primary key autoincrement," +
             "chapter_id text," +
             "chapter_name text," +
             "content text," +

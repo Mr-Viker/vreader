@@ -1,4 +1,4 @@
-package com.viker.android.vreader.util;
+/*package com.viker.android.vreader.util;
 
 import android.os.AsyncTask;
 
@@ -8,10 +8,10 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-/**
+*//**
  * Created by Viker on 2016/5/20.
  * 继承AsyncTask，将需要进行的耗时操作如网络请求放在doInBackground()方法中
- */
+ *//*
 public class HttpTask extends AsyncTask<String,Integer,String>{
 
     @Override
@@ -23,7 +23,7 @@ public class HttpTask extends AsyncTask<String,Integer,String>{
     protected String doInBackground(String... address) {
         HttpURLConnection connection = null;
         try {
-            URL url = new URL(address.toString());
+            URL url = new URL(address[0]);
             connection = (HttpURLConnection) url.openConnection();
             connection.setRequestMethod("GET");
             connection.setConnectTimeout(10000);
@@ -48,5 +48,4 @@ public class HttpTask extends AsyncTask<String,Integer,String>{
     }
 
 
-
-}
+}*/

@@ -1,10 +1,12 @@
 package com.viker.android.vreader.modle;
 
+import java.io.Serializable;
+
 /**
  * Created by Viker on 2016/5/20.
  * 书籍类目model
  */
-public class BookType {
+public class BookType implements Serializable {
 
     private int id;
     private String typeId;

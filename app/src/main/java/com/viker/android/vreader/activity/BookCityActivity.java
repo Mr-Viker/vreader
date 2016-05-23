@@ -14,5 +14,4 @@ public class BookCityActivity extends SingleFragmentActivity {
         return new BookCityFragment();
     }
 
-
 }

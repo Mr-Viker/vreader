@@ -4,46 +4,47 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <RelativeLayout
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="#485e46">
 
         <Button
-            android:id="@+id/btn_boocity_back"
+            android:id="@+id/btn_searchresult_back"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:layout_margin="5dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginLeft="5dp"
             android:layout_alignParentLeft="true"
+            android:layout_margin="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
             android:background="@drawable/bookcity_back" />
 
         <TextView
-            android:id="@+id/tv_bookcity_title"
+            android:id="@+id/tv_searchresult_title"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
-            android:padding="5dp"
             android:layout_centerInParent="true"
-            android:text="@string/tv_bookcity_title"
             android:gravity="center"
-            android:textSize="24sp"
-            android:textColor="#000000" />
+            android:padding="5dp"
+            android:text="@string/tv_bookcity_title"
+            android:textColor="#000000"
+            android:textSize="24sp" />
 
         <Button
-            android:id="@+id/btn_bookcity_search"
+            android:id="@+id/btn_searchresult_search"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginRight="5dp"
             android:layout_alignParentRight="true"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="5dp"
             android:background="@drawable/bookcity_search" />
+
     </RelativeLayout>
 
     <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/lv_bookcity_booktype" />
+        android:id="@+id/lv_searchresult_book" />
 
 
 </LinearLayout>

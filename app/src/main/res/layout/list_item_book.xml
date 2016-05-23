@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="120dp" >
+
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:id="@+id/iv_searchresult_bookcover"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_margin="10dp"
+        android:src="@drawable/searchresult_bookcover"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Large Text"
+        android:id="@+id/tv_searchresult_bookname"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="130dp"
+        android:layout_marginLeft="130dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Small Textx"
+        android:id="@+id/tv_searchresult_author"
+        android:layout_below="@+id/tv_searchresult_bookname"
+        android:layout_alignStart="@id/tv_searchresult_bookname"
+        android:layout_alignLeft="@id/tv_searchresult_bookname"
+        android:layout_marginTop="5dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Medium Text"
+        android:id="@+id/tv_searchresult_newchapter"
+        android:layout_below="@+id/tv_searchresult_author"
+        android:layout_alignStart="@id/tv_searchresult_bookname"
+        android:layout_alignLeft="@id/tv_searchresult_bookname"
+        android:layout_marginTop="5dp" />
+</RelativeLayout>
